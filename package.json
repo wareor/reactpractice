@@ -1,0 +1,19 @@
+{
+  "name": "reactpractice",
+  "version": "1.0.0",
+  "description": "CRUD Empleados React ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wareor/reactpractice.git"
+  },
+  "author": "JALEF",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wareor/reactpractice/issues"
+  },
+  "homepage": "https://github.com/wareor/reactpractice#readme"
+}
