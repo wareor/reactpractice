@@ -2,9 +2,10 @@
   "name": "reactpractice",
   "version": "1.0.0",
   "description": "CRUD Empleados React ",
-  "main": "server.js",
+  "main": "empleadosApp.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon empleadosApp.js"
   },
   "repository": {
     "type": "git",
