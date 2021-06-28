@@ -1,7 +1,9 @@
 // import empController from './DB/EmpleadosController';
 var express = require('express');
 var app = express();
+const cors = require('cors');
 app.use(express.json());
+app.use(cors({ origin: '*' }));
 
 var http = require('http');
 var server = http.createServer(app);
@@ -11,15 +13,11 @@ const { ADD, DELETE, UPDATE, GETALL, GETID } = require('./DB/EmpleadosController
 
 
 app.get('/empleado', async function (req, res) {
-  const empData = req.body;
-  let consulta = {};
-  consulta = await GETALL();
+  let consulta = await GETALL();
   res.send(consulta);
-
 });
 app.get('/empleado/:ID', async function (req, res) {
-  let consulta = {};
-  consulta = await GETID(req.params.ID);
+  let consulta = await GETID(req.params.ID);
   res.send(consulta);
 });
 
@@ -71,7 +69,7 @@ app.put('/empleado', (req, res) => {
     result.Error = err.message;
     throw new Error(err);
   }
-  res.send(result);
+  res.send(result,);
 });
 
 

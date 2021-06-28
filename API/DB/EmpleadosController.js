@@ -47,6 +47,7 @@ exports.UPDATE = function (empData) {
     });
     return `Se actualizó el empleado con ID ${empData.ID}`;
 }
+
 async function db_all(query) {
     return new Promise(function (resolve, reject) {
         db.all(query, function (err, rows) {
@@ -58,93 +59,13 @@ async function db_all(query) {
 
 
 exports.GETALL = async function () {
-    let consulta = [];
-    consulta = 
-    await db_all(`SELECT ID ID, Nombres Nombres, ApePat "Apellido Paterno", Salario Salario FROM ${tableName};`);
+    let consulta = 
+    await db_all(`SELECT * FROM ${tableName};`);
     return consulta;
 }
 
 exports.GETID = async function (empID) {
-    let consulta = [];
-    consulta = 
-    await db_all(`SELECT ID ID, Nombres Nombres, ApePat "Apellido Paterno", Salario Salario FROM ${tableName} WHERE ID = ${empID};`);
+    let consulta = 
+    await db_all(`SELECT * FROM ${tableName} WHERE ID = ${empID};`);
     return consulta;
 }
-// };
-
-
-// // CREATE
-// app.get('/add/:id/:name', function(req,res){
-//   db.serialize(()=>{
-//     db.run('INSERT INTO emp(id,name) VALUES(?,?)', [req.params.id, req.params.name], function(err) {
-//       if (err) {
-//         return console.log(err.message);
-//       }
-//       console.log("New employee has been added");
-//       res.send("New empleados has been added into the database with ID = "+req.params.id+ " and Name = "+req.params.name);
-//     });
-
-//   });
-
-// });
-
-
-// // READ
-// app.get('/view/:id', function(req,res){
-//   db.serialize(()=>{
-//     db.each('SELECT id ID, name NAME FROM emp WHERE id =?', [req.params.id], function(err,row){     //db.each() is only one which is funtioning while reading data from the DB
-//       if(err){
-//         res.send("Error encountered while dislaying");
-//         return console.error(err.message);
-//       }
-//       res.send(` ID: ${row.ID},    Name: ${row.NAME}`);
-//       console.log("Entry dislayed successfully");
-//     });
-//   });
-// });
-
-
-// //UPDATE
-//   db.serialize(()=>{
-//     db.run('UPDATE emp SET name = ? WHERE id = ?', [req.params.name,req.params.id], function(err){
-//       if(err){
-//         res.send("Error encountered while updating");
-//         return console.error(err.message);
-//       }
-//       res.send("Entry updated successfully");
-//       console.log("Entry updated successfully");
-//     });
-//   });
-// });
-// });
-
-// // DELETE
-// app.get('/del/:id', function(req,res){
-//   db.serialize(()=>{
-//     db.run('DELETE FROM emp WHERE id = ?', req.params.id, function(err) {
-//       if (err) {
-//         res.send("Error encountered while deleting");
-//         return console.error(err.message);
-//       }
-//       res.send("Entry deleted");
-//       console.log("Entry deleted");
-//     });
-//   });
-
-// });
-
-
-
-
-// // Closing the database connection.
-// app.get('/close', function(req,res){
-//   db.close((err) => {
-//     if (err) {
-//       res.send('There is some error in closing the database');
-//       return console.error(err.message);
-//     }
-//     console.log('Closing the database connection.');
-//     res.send('Database connection successfully closed');
-//   });
-
-// });
