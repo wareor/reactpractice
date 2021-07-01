@@ -1,0 +1,85 @@
+.empleado-list {
+  width: 40rem;
+  max-width: 80%;
+  margin: auto;
+}
+
+.empleado-list h2 {
+  border-bottom: 3px solid #ccc;
+  padding-bottom: 1rem;
+}
+
+.empleado-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.empleado-list li {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.26);
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.empleado-list li .col__id {
+  width: 5%;
+}
+
+.empleado-list li .col__nombres {
+  width: 10%;
+}
+
+.empleado-list li .col__apePat {
+  width: 20%;
+}
+
+.empleado-list li .col__salario {
+  width: 15%;
+}
+
+.empleado-list li .col__estado {
+  width: 15%;
+}
+
+.empleado-list li .col__estado_act {
+  width: 15%;
+  color: green;
+}
+
+.empleado-list li .col__estado_inact {
+  width: 15%;
+  color: red;
+}
+
+.rowButtons-container {
+  display: flex;
+  width: 20%;
+}
+
+.button-row-update {
+  width: 40px;
+  height: 40px;
+  padding: 0px;
+  background-color: #0066ff;
+  border-color: #0066ff;
+  margin-right: 2px;
+}
+
+.button-row-delete {
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  padding: 0px;
+  background-color: red;
+  border-color: red;
+}
+
+.button-main-add{
+  margin-left: 2px;
+  width: 80px;
+  background-color: green;
+  border-color: green;
+}
