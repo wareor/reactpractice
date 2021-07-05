@@ -18,7 +18,8 @@ const {
   DELETE: UsuarioDELETE,
   UPDATE: UsuarioUPDATE,
   GETALL: UsuarioGETALL,
-  GETID: UsuarioGETID
+  GETID: UsuarioGETID,
+  UsuarioGETAuth: UsuarioGETAuth
 } = require('./DB/UsuariosController.js');
 
 var result = {
@@ -96,13 +97,13 @@ app.put('/empleado', (req, res) => {
 });
 
 
-// Usuarios WM >>>
 /**
- * Devuelve la consulta de todos los registros en la tabla de Usuarios
+ * Verifica si existe un usuario que correponde al usuario y contraseña
  */
- app.get('/usuario', async function (req, res) {
-  let consulta = [];
-  consulta = await UsuarioGETALL();
+app.post('/usuario/login', async function (req, res) {
+  console.log(req.body);
+  let consulta = await UsuarioGETAuth(req.body);
+  console.log(consulta);
   res.send(consulta);
 });
 
@@ -114,6 +115,17 @@ app.get('/usuario/:ID', async function (req, res) {
   consulta = await UsuarioGETID(req.params.ID);
   res.send(consulta);
 });
+
+/**
+ * Devuelve el registro de un usuario
+ */
+app.get('/usuario/:ID', async function (req, res) {
+  let consulta = [];
+  consulta = await UsuarioGETID(req.params.ID);
+  res.send(consulta);
+});
+
+
 
 /**
  * Agrega un registro de Usuario

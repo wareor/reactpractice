@@ -5,7 +5,9 @@ import './EmpleadosConsulta.css';
 const EmpleadosConsulta = props => {
     console.log("se inicia el componente consulta");
     const empDS = props.empleadosDS;
-
+    let cssDeleteBtn;
+    let cssUpdateBtn;
+    let cssAddBtn;
 
     const onClickUpdate = event => {
         const empID = Number(event.target.id.split('-')[1]);
@@ -19,8 +21,18 @@ const EmpleadosConsulta = props => {
     const onClickAdd = event => {
         props.onClickAdd();
     }
+
+    cssDeleteBtn = `button-row-delete${(props.user.Permisos.find(v => { return (v.VerboID === 2) })) ? '' : ' hide__element'}`;
+    cssUpdateBtn = `button-row-update${(props.user.Permisos.find(v => { return (v.VerboID === 1) })) ? '' : ' hide__element'}`;
+    cssAddBtn = `button-main-add${(props.user.Permisos.find(v => { return (v.VerboID === 3) })) ? '' : ' hide__element'}`;
     return (
         <section className="empleado-list">
+            <div className="user-name__container">
+                <span>{props.user.Nombre}</span>
+            </div>
+            <div>
+                <h2>Empleados</h2>
+            </div>
             <ul>
                 <li>
                     <span className="col__id">ID</span>
@@ -29,7 +41,7 @@ const EmpleadosConsulta = props => {
                     <span className="col__salario">Salario</span>
                     <span className="col__estado">Estado</span>
                     <div className="rowButtons-container">
-                        <button className="button-main-add" type="button" onClick={onClickAdd}><b>+</b></button>
+                        <button className={cssAddBtn} type="button" onClick={onClickAdd}><b>+</b></button>
                     </div>
 
                 </li>
@@ -43,8 +55,8 @@ const EmpleadosConsulta = props => {
                         <span className="col__salario">${emp.Salario}</span>
                         <span className={emp.Estado === 1 ? "col__estado_act" : "col__estado_inact"}>{emp.Estado === 1 ? 'Activo' : 'Inactivo'}</span>
                         <div className="rowButtons-container">
-                            <button id={`updBtn-${emp.ID}`} className="button-row-update" type="button" onClick={onClickUpdate}>✎</button>
-                            <button id={`delBtn-${emp.ID}`} className="button-row-delete" type="button" onClick={onClickDelete}>🗑</button>
+                            <button id={`updBtn-${emp.ID} `} className={cssUpdateBtn} type="button" onClick={onClickUpdate}>✎</button>
+                            <button id={`delBtn - ${emp.ID} `} className={cssDeleteBtn} type="button" onClick={onClickDelete}>🗑</button>
                         </div>
                     </li>
                 ))}

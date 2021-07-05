@@ -1,7 +1,7 @@
 .empleado-list {
   width: 40rem;
   max-width: 80%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .empleado-list h2 {
@@ -82,4 +82,8 @@
   width: 80px;
   background-color: green;
   border-color: green;
+}
+.user-name__container{
+  margin:5px;
+  text-align:end;
 }
