@@ -1,0 +1,16 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Sass Compile",
+            "type": "shell",
+            "command": "node-sass coursefirstapp/src/components/Expenses/ExpenseItem.scss coursefirstapp/src/components/Expenses/ExpenseItem.css | node-sass coursefirstapp/src/components/Expenses/ExpenseDate.scss coursefirstapp/src/components/Expenses/ExpenseDate.css | node-sass coursefirstapp/src/components/Expenses/ExpensesSimpleList.scss coursefirstapp/src/components/Expenses/ExpensesSimpleList.css | node-sass coursefirstapp/src/components/UI/Card.scss coursefirstapp/src/components/UI/Card.css | node-sass coursefirstapp/src/components/NewExpense/ExpenseForm.scss coursefirstapp/src/components/NewExpense/ExpenseForm.css | node-sass coursefirstapp/src/components/NewExpense/NewExpense.scss coursefirstapp/src/components/NewExpense/NewExpense.css",
+            "group": "build",
+            "problemMatcher": [
+                "$lessc"
+            ]
+        }
+    ]
+  }
