@@ -30,6 +30,7 @@ const App = props => {
   const ConsultaEmpleados = () => {
     axios.get(empleadosAPIUrl)
       .then(res => {
+        console.log(res.data);
         setEmpleadosDS(res.data);
       })
       .catch(err => {
@@ -102,7 +103,7 @@ const App = props => {
       });
   }
   if (user.Permisos) {
-    cssConsulta = (user.Permisos.find(v => { return (v.VerboID === 4) })) ? '' : 'hide__element';
+    cssConsulta = (user.Permisos.find(v => { return (v.VerboID === 0) })) ? '' : 'hide__element';
   }
   if (user.SesionValida === true) {
     return <div className={`section__container ${cssConsulta}`}>

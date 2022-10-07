@@ -22,9 +22,9 @@ const EmpleadosConsulta = props => {
         props.onClickAdd();
     }
 
-    cssDeleteBtn = `button-row-delete${(props.user.Permisos.find(v => { return (v.VerboID === 2) })) ? '' : ' hide__element'}`;
-    cssUpdateBtn = `button-row-update${(props.user.Permisos.find(v => { return (v.VerboID === 1) })) ? '' : ' hide__element'}`;
-    cssAddBtn = `button-main-add${(props.user.Permisos.find(v => { return (v.VerboID === 3) })) ? '' : ' hide__element'}`;
+    cssDeleteBtn = `button-row-delete${(props.user.Permisos.find(v => { return (v.VerboID === 3) })) ? '' : ' hide__element'}`;
+    cssUpdateBtn = `button-row-update${(props.user.Permisos.find(v => { return (v.VerboID === 2) })) ? '' : ' hide__element'}`;
+    cssAddBtn = `button-main-add${(props.user.Permisos.find(v => { return (v.VerboID === 1) })) ? '' : ' hide__element'}`;
     return (
         <section className="empleado-list">
             <div className="user-name__container">
