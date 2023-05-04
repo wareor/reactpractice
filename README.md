@@ -1,5 +1,5 @@
 
-BackEnd and FrontEnd CRUD project
+BackEnd and FrontEnd Employees CRUD with basic authencication component project
 
 BackEnd:
 * Nodejs
