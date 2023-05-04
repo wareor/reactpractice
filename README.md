@@ -15,9 +15,12 @@ Goals of this project
 * Understand Reactjs to migrate a product from Angularjs to Reactjs
 
 Run BackEnd
+ ```
  npm install
  npm start
- 
+ ```
 Run FronEnd
+ ```
  npm install
  npm start
+```
