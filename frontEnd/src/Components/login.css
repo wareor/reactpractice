@@ -1,0 +1,15 @@
+.login__container {
+    max-width: 500px;
+    min-width: 200px;
+    /* width: 500xp; */
+    margin: 0 auto;
+  }
+  
+  .login-form__actions{
+    margin:5px;
+    text-align:end;
+  }
+  .login__message{
+    color:red;
+    display: block;
+  }

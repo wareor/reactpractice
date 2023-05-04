@@ -1,0 +1,19 @@
+/* .auth {
+  width: 30rem;
+  margin: 2rem auto;
+  max-width: 80%;
+  text-align: center;
+} */
+
+
+.acciones-container{
+  display: flex;
+  justify-content: space-between;
+  width: 0rem;
+  margin: auto;
+}
+
+
+.hide__element{
+  display: none !important;
+}
