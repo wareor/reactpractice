@@ -24,3 +24,5 @@ Run FronEnd
  npm install
  npm start
 ```
+ User: jesus.echevarria@gmail.com
+ Password: password1
